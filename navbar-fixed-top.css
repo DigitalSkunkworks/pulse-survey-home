@@ -1,0 +1,12 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+iframe {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    display:block;
+}
