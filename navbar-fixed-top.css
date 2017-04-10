@@ -9,4 +9,7 @@ iframe {
     margin: 0 auto;
     background-color: #fff;
     display:block;
+    border: ddd;
+    border-width: 1px;
+    border-style: solid;
 }
