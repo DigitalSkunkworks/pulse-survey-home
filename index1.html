@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var accessToken = "b4dba035732b43be8a69c72ef8bf5646",
+    var accessToken = "cc40f4e63165433793de15fc87850a8c",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
       $recBtn,
@@ -88,7 +88,7 @@
         headers: {
           "Authorization": "Bearer " + accessToken
         },
-        data: JSON.stringify({query: text, lang: "en", sessionId: "yaydevdiner"}),
+        data: JSON.stringify({query: text, lang: "en", sessionId: "123456"}),
         success: function(data) {
           prepareResponse(data);
         },
