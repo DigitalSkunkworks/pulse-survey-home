@@ -6,8 +6,19 @@
 	<script type="text/javascript">
 		var accessToken = "cc40f4e63165433793de15fc87850a8c";
 		var baseUrl = "https://api.api.ai/v1/";
+        /* required vars */
+        $speechInput,
+        $recBtn,
+        recognition,
+        messageRecording = "Recording...",
+        messageCouldntHear = "I couldn't hear you, could you say that again?",
+        messageInternalError = "Oh no, there has been an internal server error",
+        messageSorry = "I'm sorry, I don't have the answer to that yet.";
+
 		$(document).ready(function() {
-			$("#input").keypress(function(event) {
+          $speechInput = $("#speech");
+          $recBtn = $("#rec");
+			$speechInput.keypress(function(event) {
 				if (event.which == 13) {
 					event.preventDefault();
 					send();
@@ -93,7 +104,7 @@
 </head>
 <body>
 	<div>
-		<input id="input" type="text"> <button id="rec">Speak</button>
+		<input id="speech" type="text"> <button id="rec">Speak</button>
 		<br>Response<br> <textarea id="response" cols="40" rows="20"></textarea>
 	</div>
 </body>
