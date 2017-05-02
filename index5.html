@@ -1,10 +1,29 @@
+Skip to content
+ 
+Search…
+All gists
+GitHub
+New gist
+@liambarnett
+  Star 0
+  Fork 0
+  @DottenpixelDottenpixel/gist:78d9a5487b4aeef32659a017058f75b9 Secret
+forked from ystrot/gist:e799f338ab9849c90b04
+Last active 3 months ago
+Embed  
+<script src="https://gist.github.com/Dottenpixel/78d9a5487b4aeef32659a017058f75b9.js"></script>
+  Download ZIP
+ Code  Revisions 9
+API.AI Usage Example
+Raw
+ gistfile1.html
 <html>
 <head>
 	<title>API Example</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		var accessToken = "cc40f4e63165433793de15fc87850a8c";
+		var accessToken = "<your agent access token>";
 		var baseUrl = "https://api.api.ai/v1/";
 		$(document).ready(function() {
 			$("#input").keypress(function(event) {
@@ -69,7 +88,11 @@
 				headers: {
 					"Authorization": "Bearer " + accessToken
 				},
-				data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+				data: JSON.stringify({
+					query: text,
+					lang: "en",
+					sessionId: "<any random string>"
+				}),
 				success: function(data) {
 					setResponse(JSON.stringify(data, undefined, 2));
 				},
@@ -98,6 +121,19 @@
 	</div>
 </body>
 </html>
-		
-		
-		
+ @Dottenpixel
+Owner
+Dottenpixel commented on Jan 20 • edited
+Edited to work based on usage shown here and here
+@liambarnett
+  
+            
+ 
+Write  Preview
+
+Leave a comment
+Attach files by dragging & dropping,  Choose Files selecting them, or pasting from the clipboard.
+ Styling with Markdown is supported
+Comment
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
