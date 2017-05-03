@@ -7,7 +7,6 @@
   <script type="text/javascript">
     var accessToken = "cc40f4e63165433793de15fc87850a8c",
       baseUrl = "https://api.api.ai/v1/",
-      addFlag = 0,
       $speechInput,
       $recBtn,
       $addBtn,
@@ -56,14 +55,13 @@
         recognition.onend = null;
         
         var text = "";
+        var inputLength = true;
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
           };
 
-          if ($.trim($('#speech').val() == '')) {
-              inputLength = true;
-          } else { 
-              inputLength = false;
+          if ($.trim($('#speech').val() != '')) {
+              inputLength = false
           }
 
             console.log('before ' + inputLength) 
@@ -146,15 +144,18 @@
         }
       });
     }
+
     function prepareResponse(val) {
       var debugJSON = JSON.stringify(val, undefined, 2),
         spokenResponse = val.result.fulfillment.speech;
       respond(spokenResponse);
       debugRespond(debugJSON);
     }
+
     function debugRespond(val) {
       $("#response").text(val);
     }
+
     function respond(val) {
       if (val == "") {
         val = messageSorry;
