@@ -8,7 +8,7 @@
     var accessToken = "cc40f4e63165433793de15fc87850a8c",
       baseUrl = "https://api.api.ai/v1/",
       addFlag = 0,
-      divLength = true,
+      inputLength = true,
       $speechInput,
       $recBtn,
       $addBtn,
@@ -61,15 +61,19 @@
             text += event.results[i][0].transcript;
           };
 
-           divLength = ($.trim($('#speech').val() == ''));
+          if ($.trim($('#speech').val() == '')) {
+              inputLength = true;
+          } else { 
+              inputLength = false;
+          }
 
-            console.log('before ' + divLength) 
+            console.log('before ' + inputLength) 
 
-            if (divLength == true) {
-               console.log('set ' + divLength) 
+            if (inputLength) {
+               console.log('set ' + inputLength) 
                setInput(text);
-            } else if (divLength == false) {
-               console.log('append ' + divLength)                 
+            } else {
+               console.log('append ' + inputLength)                 
                 appendInput(text);
             }
              
