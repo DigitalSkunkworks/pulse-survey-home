@@ -7,6 +7,7 @@
   <script type="text/javascript">
     var accessToken = "cc40f4e63165433793de15fc87850a8c",
       baseUrl = "https://api.api.ai/v1/",
+      addFlag = false,
       $speechInput,
       $recBtn,
       $addBtn,
@@ -32,7 +33,7 @@
       });
 
      $addBtn.on("click", function(event) {
-         addFlag = 1;
+         addFlag = true
         switchRecognition();
       });
 
@@ -101,13 +102,16 @@
 
      function appendInput(text) {
          var currentInput = $('#speech').val()
-      console.log('Append' + currentInput)
+      console.log('Append ' + currentInput)
       $speechInput.val(currentInput + ' ' + text);
     }
 
     function updateRec() {
-      $recBtn.text(recognition ? "Stop" : "Speak");
-      $addBtn.text(recognition ? "Stop" : "Add");
+        if (addFlag) {
+            $addBtn.text(recognition ? "Stop" : "Add");
+        } else { 
+            $recBtn.text(recognition ? "Stop" : "Speak");
+        }
     }
     function send() {
       var text = $speechInput.val();
