@@ -7,7 +7,7 @@
   <script type="text/javascript">
     var accessToken = "cc40f4e63165433793de15fc87850a8c",
       baseUrl = "https://api.api.ai/v1/",
-      addFlag = false,
+      addFlag = 0,
       $speechInput,
       $recBtn,
       $addBtn,
@@ -33,7 +33,7 @@
       });
 
      $addBtn.on("click", function(event) {
-         addFlag = true;
+         addFlag = 1;
         switchRecognition();
       });
 
@@ -86,7 +86,7 @@
     }
     function setInput(text) {
       $speechInput.val(text);
-      if (addFlag) {
+      if (addFlag = 0) {
       send();
       }
     }
