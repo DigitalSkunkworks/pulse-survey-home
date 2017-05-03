@@ -65,21 +65,17 @@
             console.log($('#speech').val()) 
             console.log($.trim($('#speech').val().length > 1))
 
-            speechLength = ($.trim($('#speech').val().length > 1))
+            speechLength = ($.trim($('#speech').val().length > 0))
 
             console.log('speech length: ' + speechLength)
 
-              if (speechLength) {
-              inputFlag = false
-          }
 
-
-            if (inputFlag) {
-               console.log('set ' + inputFlag) 
-               setInput(text);
+            if (speechLength) {
+               console.log('append')                 
+                appendInput(text);               
             } else {
-               console.log('append ' + inputFlag)                 
-                appendInput(text);
+               console.log('set') 
+               setInput(text);
             }
              
         stopRecognition();
