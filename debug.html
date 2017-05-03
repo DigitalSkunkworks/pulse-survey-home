@@ -61,8 +61,10 @@
           }
             if ( $('#speech') !== null) {
              appendInput(text);
+            } else {
+                setInput(text);
             }
-             setInput(text);
+             
         stopRecognition();
       };
       recognition.onend = function() {
