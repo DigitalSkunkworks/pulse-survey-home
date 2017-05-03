@@ -59,7 +59,10 @@
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
           }
-          setInput(text);
+            if ( $('#speech') !== null) {
+             setInput(text);
+            }
+             appendInput(text);
         stopRecognition();
       };
       recognition.onend = function() {
@@ -84,13 +87,16 @@
         startRecognition();
       }
     }
+
     function setInput(text) {
       $speechInput.val(text);
-      if (addFlag = 0) {
-      send();
-      }
-      stopRecognition();
+    /*  send();*/
     }
+
+     function appendInput(text) {
+      $speechInput.val(" " + $speechInput.val());
+    }
+
     function updateRec() {
       $recBtn.text(recognition ? "Stop" : "Speak");
       $addBtn.text(recognition ? "Stop" : "Add");
