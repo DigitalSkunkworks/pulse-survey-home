@@ -60,13 +60,16 @@
             text += event.results[i][0].transcript;
           }
 
-           divLength = ($('#speech').contents().length == 0);
+           divLength = ($('#speechContainer').contents().length == 0);
+           divLength1 = (!$.trim( $('#speechContainer').html() ).length);
+
 
             if ($speechInput.length == 0) {
                console.log($speechInput.length) 
                setInput(text);
             } else {
                console.log(divLength)                 
+               console.log(divLength1) 
                 appendInput(text);
             }
              
@@ -248,7 +251,7 @@
 </head>
 <body>
   <div class="container">
-    <input id="speech" type="text">
+  <div id="speechContainer">  <input id="speech" type="text"> </div>
     <button id="rec" class="btn">Speak</button><button id="add" class="btn">Add</button>
     <div id="spokenResponse" class="spoken-response">
       <div class="spoken-response__text"></div>
