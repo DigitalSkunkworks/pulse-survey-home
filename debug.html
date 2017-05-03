@@ -59,10 +59,10 @@
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
           }
-            if ( $speechInput !== null) {
-             appendInput(text);
+            if ( $speechInput.length) {
+               setInput(text);
             } else {
-                setInput(text);
+                appendInput(text);
             }
              
         stopRecognition();
@@ -98,7 +98,7 @@
 
      function appendInput(text) {
       console.log('Inside appendInput')
-      $speechInput.val(" " + $speechInput.val());
+      $speechInput.val(" " + $speechInput.val(text));
     }
 
     function updateRec() {
