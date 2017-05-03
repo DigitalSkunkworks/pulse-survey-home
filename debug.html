@@ -62,7 +62,7 @@
 
            divLength = ($.trim($('#speech').val() == ''))
 
-            if ($speechInput.length == 0) {
+            if (divLength) {
                console.log('set' + divLength) 
                setInput(text);
             } else {
