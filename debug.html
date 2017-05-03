@@ -60,9 +60,9 @@
             text += event.results[i][0].transcript;
           }
             if ( $('#speech') !== null) {
-             setInput(text);
-            }
              appendInput(text);
+            }
+             setInput(text);
         stopRecognition();
       };
       recognition.onend = function() {
