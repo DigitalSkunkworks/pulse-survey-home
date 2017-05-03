@@ -62,7 +62,7 @@
 
            divLength = ($.trim($('#speech').val() == ''))
             console.log('before ' + divLength) 
-            if (divLength) {
+            if (divLength === true) {
                console.log('set ' + divLength) 
                setInput(text);
             } else {
