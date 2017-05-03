@@ -31,6 +31,10 @@
         switchRecognition();
       });
 
+     $addBtn.on("click", function(event) {
+        switchRecognition();
+      });
+
       
       $(".debug__btn").on("click", function() {
         $(this).next().toggleClass("is-active");
@@ -84,6 +88,7 @@
     }
     function updateRec() {
       $recBtn.text(recognition ? "Stop" : "Speak");
+      $addBtn.text(recognition ? "Stop" : "Add");
     }
     function send() {
       var text = $speechInput.val();
