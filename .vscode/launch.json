@@ -1,0 +1,21 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+    
+
+        {
+            "name": "Launch index.html (disable sourcemaps)",
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": false,
+            "file": "${workspaceRoot}/debug.html"
+        },
+                {
+            "name": "Launch localhost",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost/index3.html",
+            "webRoot": "${workspaceRoot}/wwwroot"
+        }
+    ]
+}
