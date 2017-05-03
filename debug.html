@@ -58,10 +58,10 @@
         var text = "";
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
-          }
+          };
 
            divLength = ($.trim($('#speech').val() == ''));
-           
+
             console.log('before ' + divLength) 
             if (divLength === true) {
                console.log('set ' + divLength) 
