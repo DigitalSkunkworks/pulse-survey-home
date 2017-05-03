@@ -100,9 +100,8 @@
     }
 
      function appendInput(text) {
-         var currentInput = $('#speech').val()
-      console.log('Append' + currentInput)
-      $speechInput.val(currentInput + ' ' + text);
+      console.log('Inside appendInput')
+      $speechInput.val("append " + text);
     }
 
     function updateRec() {
