@@ -55,22 +55,26 @@
         recognition.onend = null;
         
         var text = "";
-        var inputFlag = true;
-        var speechLength;
+        var appendFlag = 0;
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
           };
 
-            console.log('before ' + inputFlag)
             console.log($('#speech').val()) 
             console.log($.trim($('#speech').val().length > 1))
+            console.log('speech length before: ' + appendFlag)
+            
+            
+            if ($.trim($('#speech').val().length > 0)) {
+                appendFlag = 1
+            } else { 
+                appendFlag = 0
+            }
 
-            speechLength = ($.trim($('#speech').val().length > 0))
-
-            console.log('speech length: ' + speechLength)
+            console.log('speech length after: ' + appendFlag)
 
 
-            if (speechLength = true) {
+            if (appendFlag = 1) {
                console.log('append')                 
                 appendInput(text);               
             } else {
