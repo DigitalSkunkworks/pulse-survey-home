@@ -60,7 +60,7 @@
             text += event.results[i][0].transcript;
           }
 
-           divLength = ($('#speech').text() == '');
+           divLength = ($('#speech').contents().length == 0);
 
             if ($speechInput.length == 0) {
                console.log($speechInput.length) 
