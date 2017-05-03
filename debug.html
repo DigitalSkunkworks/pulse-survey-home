@@ -60,22 +60,13 @@
             text += event.results[i][0].transcript;
           };
 
-          if ($.trim($('#speech').val() != '')) {
+          if ($.trim($('#speech').val().length > 1)) {
               inputLength = false
           }
 
             console.log('before ' + inputLength)
             console.log($('#speech').val()) 
-
-
-          if (jQuery.trim($('#speech').val() = '')) {
-              inputLength = true;
-          } else { 
-              inputLength = false;
-          }          
-
-            console.log('before ' + inputLength) 
-
+            console.log($.trim($('#speech').val().length > 1))
 
 
             if (inputLength) {
