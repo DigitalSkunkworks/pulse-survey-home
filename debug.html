@@ -8,7 +8,6 @@
     var accessToken = "cc40f4e63165433793de15fc87850a8c",
       baseUrl = "https://api.api.ai/v1/",
       addFlag = 0,
-      inputFlag,
       $speechInput,
       $recBtn,
       $addBtn,
@@ -61,13 +60,13 @@
             text += event.results[i][0].transcript;
           }
 
-           inputflag = ($.trim($('#speech').val() == ''))
-               console.log(inputFlag)                 
+           divLength = ($.trim($('#speech').val() == ''))
 
-            if (inputFlag) {
+            if ($speechInput.length == 0) {
+               console.log($speechInput.length) 
                setInput(text);
             } else {
-               console.log(inputFlag)                 
+               console.log(divLength)                 
                 appendInput(text);
             }
              
