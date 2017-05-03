@@ -63,10 +63,10 @@
            divLength = ($.trim($('#speech').val() == ''))
 
             if ($speechInput.length == 0) {
-               console.log($speechInput.length) 
+               console.log('set' + divLength) 
                setInput(text);
             } else {
-               console.log(divLength)                 
+               console.log('append' + divLength)                 
                 appendInput(text);
             }
              
