@@ -68,6 +68,17 @@
 
             console.log('before ' + inputLength) 
 
+
+          if (jQuery.trim($speechInput).length > 0) {
+              inputLength = true;
+          } else { 
+              inputLength = false;
+          }          
+
+            console.log('before ' + inputLength) 
+
+
+
             if (inputLength) {
                console.log('set ' + inputLength) 
                setInput(text);
