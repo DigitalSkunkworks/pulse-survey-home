@@ -59,7 +59,8 @@
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
           }
-            if ( $speechInput.length) {
+            if ($speechInput.trim().length == 0) {
+               console.log($speechInput.length) 
                setInput(text);
             } else {
                 appendInput(text);
