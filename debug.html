@@ -61,10 +61,10 @@
             text += event.results[i][0].transcript;
           }
 
-           inputflag = ($.trim($('#speech').val() == ''));
-           
+           inputflag = ($.trim($('#speech').val() == ''))
+               console.log(inputFlag)                 
+
             if (inputFlag) {
-               console.log(inputFlag)                                 
                setInput(text);
             } else {
                console.log(inputFlag)                 
