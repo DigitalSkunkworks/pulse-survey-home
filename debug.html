@@ -59,11 +59,14 @@
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
           }
+
+           divLength = !$.trim( $('#speech').html() ).length;
+
             if ($speechInput.length == 0) {
                console.log($speechInput.length) 
                setInput(text);
             } else {
-               console.log($("#speech").length)                 
+               console.log(divLength)                 
                 appendInput(text);
             }
              
