@@ -84,9 +84,11 @@
       if (recognition) {
         recognition.stop();
         recognition = null;
+        $("#spokenResponse").removeClass("is-active");
       }
       updateRec();
     }
+
     function switchRecognition() {
       if (recognition) {
         stopRecognition();
