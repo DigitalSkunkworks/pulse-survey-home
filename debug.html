@@ -137,6 +137,7 @@
     function prepareResponse(val) {
       var debugJSON = JSON.stringify(val, undefined, 2),
         spokenResponse = val.result.fulfillment.speech;
+        $speechInput.val(''); /* empty input after submit */
       respond(spokenResponse);
       debugRespond(debugJSON);
     }
