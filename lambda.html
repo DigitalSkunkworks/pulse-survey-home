@@ -25,7 +25,6 @@
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
 
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -49,6 +48,11 @@
         body, html {height:100%;}
         div.wrap {height:100%; overflow:hidden;}
         body {overflow: hidden; }
+
+        .validation {
+          color: red;
+          display: hidden;
+        }
       </style>
 
   </head>
@@ -112,6 +116,7 @@
 <div class="form-group">
   <label for="pwd">Width:</label>
   <input type="text" class="form-control" id="width">
+  <label id="valTxt" class="validation">Please enter values for both fields before submitting</label>
 </div>
 <button onclick="resizeImg()" type="button" class="btn">Submit</button>
 
@@ -129,10 +134,23 @@
    function resizeImg() {
     height = document.getElementById('height').value;
     width = document.getElementById('width').value;
-    window.open("http://tech-talk-demo-images.s3-website-eu-west-1.amazonaws.com/"+ width +"x"+ height + "/blue_marble.jpg" ,"MyTargetWindowName");
+
+    if (height.length < 1 || width.length < 1) {
+    /*  window.alert("enter values dude");*/
+    $('#valTxt').show();
+    }
+      else
+      {
+        window.open("http://tech-talk-demo-images.s3-website-eu-west-1.amazonaws.com/"+ width +"x"+ height + "/blue_marble.jpg" ,"MyTargetWindowName");
+      }
    }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+    $(document).ready(function() {
+      $('#valTxt').hide();
+      });
+</script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
